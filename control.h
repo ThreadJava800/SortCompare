@@ -20,6 +20,11 @@ void selectionSort(std::vector<int>* vec);
 void mqSort(std::vector<int>* vec, size_t l, size_t r, 
             int (*func)(std::vector<int>* vec, size_t, size_t));
 
+//-------------MERGE SORT--------------------//
+int* mergeSort(int* arr, int* buffer, size_t l, size_t r);
+
+//------------- LSD SORT --------------------//
+void lsdSort(int* arr, int* buffer, int* cntArr, int size);
 
 std::vector<int> generateArr(int amount) {
     std::vector<int> vec;
