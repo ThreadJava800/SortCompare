@@ -11,7 +11,7 @@
 
 Here are some charts:
 
-![alt text](https://github.com/ThreadJava800/SortCompare/blob/main/fastSortCmp.png)
+![alt text](https://github.com/ThreadJava800/SortCompare/blob/main/fastSort.png)
 
 ![alt text](https://github.com/ThreadJava800/SortCompare/blob/main/qsortCmp.png)
 
