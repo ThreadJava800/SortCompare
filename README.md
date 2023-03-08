@@ -15,6 +15,14 @@ Here are some charts:
 
 ![alt text](https://github.com/ThreadJava800/SortCompare/blob/main/qsortCmp.png)
 
-So as we can see, [LSD](https://github.com/ThreadJava800/SortCompare/blob/main/lsd.cpp) has the best time asymptotics, but mind that it uses a lot of extra memory. And [merge sort](https://github.com/ThreadJava800/SortCompare/blob/main/mergeSort.cpp) is more or less faster that [quickSort](https://github.com/ThreadJava800/SortCompare/blob/main/quickSort.cpp).
+![alt text](https://github.com/ThreadJava800/SortCompare/blob/main/quadrSort.png)
 
-I personally was surprised to figure out that quickSort is not as 'quick' as it is considered to be, so I would definetely use merge sort in my future projects.
+On the graph below you can see comparison of all sortings (quadratic sorts has amount of elements in range [1000, 10^5] and other sortings have [10000, 10^7] elements). It shows us how quadratic sortings unefficient.
+
+![alt text](https://github.com/ThreadJava800/SortCompare/blob/main/allSort.png)
+
+
+
+So as we can see, [LSD](https://github.com/ThreadJava800/SortCompare/blob/main/lsd.cpp) has the best time asymptotics, but mind that it uses a lot of extra memory. And [merge sort](https://github.com/ThreadJava800/SortCompare/blob/main/mergeSort.cpp) is more or less faster that [quickSort](https://github.com/ThreadJava800/SortCompare/blob/main/quickSort.cpp) but still uses extra memory (but less than lsd).
+
+I personally was surprised to figure out that quickSort is not as 'quick' as it is considered to be, it is just the fastet sorting algorithm that doesn't use additional memory. So I think, I will look forward to using it in most events.

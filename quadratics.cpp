@@ -60,8 +60,8 @@ int main() {
     // for (int i = 0; i < values.size(); i++) {
     //     printf("%d ", values[i]);
     // }
-
-    for (int i = 1000; i <= 1000000; i += 10000) {
+ 
+    for (int i = 1000; i <= 100000; i += 1000) {
         std::vector<int> values = generateArr(i);
         std::vector<int> toSort = values;
 
