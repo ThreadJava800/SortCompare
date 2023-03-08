@@ -1,11 +1,11 @@
 # Sortings comparison
 > I tested the most popular sortings to see which one is faster:
-1) Bubble sort    O(n^2)
-2) Selection sort O(n^2)
-3) Insertion sort O(n^2)
-4) QSort (with different pivots) ~O(n*log(n))
-5) Merge sort O(n * log(n))
-6) LSD sort O(n)
+1) [Bubble sort    O(n^2)](https://github.com/ThreadJava800/SortCompare/blob/main/quadratics.cpp#L15)
+2) [Selection sort O(n^2)](https://github.com/ThreadJava800/SortCompare/blob/main/quadratics.cpp#L26)
+3) [Insertion sort O(n^2)](https://github.com/ThreadJava800/SortCompare/blob/main/quadratics.cpp#L3)
+4) [QSort (with different pivots) ~O(n*log(n))](https://github.com/ThreadJava800/SortCompare/blob/main/quickSort.cpp#L13)
+5) [Merge sort O(n * log(n))](https://github.com/ThreadJava800/SortCompare/blob/main/mergeSort.cpp#L3)
+6) [LSD sort O(n)](https://github.com/ThreadJava800/SortCompare/blob/main/lsd.cpp)
 
 > I used g++ without any optimisations (such as -o3 and etc.)
 
