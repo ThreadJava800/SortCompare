@@ -8,11 +8,17 @@
 #include <algorithm>
 #include <chrono>
 #include <fstream>
+#include <cstring>
+
+const int SWITCH_SORT = 47;
 
 std::vector<int> generateArr(int amount);
 
 //-------------QUADRATIC SORTS----------------//
 void insertionSort(std::vector<int>* vec);
+void insertionSortDel(std::vector<int>* vec);
+void insertionSortBin(std::vector<int>* vec);
+
 void bubbleSort   (std::vector<int>* vec);
 void selectionSort(std::vector<int>* vec);
 
@@ -21,7 +27,7 @@ void mqSort(std::vector<int>* vec, size_t l, size_t r,
             int (*func)(std::vector<int>* vec, size_t, size_t));
 
 //-------------MERGE SORT--------------------//
-int* mergeSort(int* arr, int* buffer, size_t l, size_t r);
+int* _mergeSort(int* arr, int* buffer, size_t l, size_t r);
 
 //------------- LSD SORT --------------------//
 void lsdSort(int* arr, int* buffer, int* cntArr, int size);

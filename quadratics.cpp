@@ -12,6 +12,64 @@ void insertionSort(std::vector<int>* vec) {
     }
 }
 
+void insertionSortDel(std::vector<int>* vec) {
+    size_t  vecSize = vec->size();
+
+    for (size_t i = 0; i < vecSize; i++) {
+        long long binI = 0, binJ = i - 1;
+        size_t elem = (*vec)[i];
+
+        while (binI <= binJ) {
+            size_t piv = binI + (binJ - binI) / 2;
+
+            if ((*vec)[piv] == elem) {
+                break;
+            }
+
+            if ((*vec)[piv] <= elem) {
+                binI = piv + 1;
+            } else {
+                binJ = piv - 1;
+            }
+        }
+
+        size_t temp = (*vec)[i];
+        int cnt1 = 0, cnt2 = i - binI - 1;
+        for (int j = i; j >= binI + 1; j--) {
+            (*vec)[j - cnt2] = (*vec)[binI + 1 + cnt1];
+
+            cnt2--;
+            cnt1++;
+        }
+    }
+}
+
+void insertionSortBin(std::vector<int>* vec) {
+    size_t vecSize = vec->size();
+    for (size_t i = 0; i < vecSize; i++) {
+        long long binI = 0, binJ = i - 1;
+        size_t elem = (*vec)[i];
+
+        while (binI <= binJ) {
+            size_t piv = binI + (binJ - binI) / 2;
+
+            if ((*vec)[piv] == elem) {
+                break;
+            }
+
+            if ((*vec)[piv] <= elem) {
+                binI = piv + 1;
+            } else {
+                binJ = piv - 1;
+            }
+        }
+
+        for (size_t ind = i; ind > binI; ind--) {
+            std::swap((*vec)[ind], (*vec)[ind - 1]);
+        }
+    }
+}
+
 void bubbleSort   (std::vector<int>* vec) {
     size_t n = vec->size();
     for (size_t i = 0; i < n; i++) {
@@ -51,15 +109,11 @@ int main() {
     std::ofstream selection;
     selection.open("selection.txt");
 
-    // std::vector<int> values = generateArr(10);
-    // for (int i = 0; i < values.size(); i++) {
-    //     printf("%d ", values[i]);
-    // }
-    // printf("\n");
-    // bubbleSort(&values);
-    // for (int i = 0; i < values.size(); i++) {
-    //     printf("%d ", values[i]);
-    // }
+    std::ofstream bin;
+    bin.open("insertionBin.txt");
+
+    std::ofstream del;
+    del.open("insertionDel.txt");
  
     for (int i = 1000; i <= 100000; i += 1000) {
         std::vector<int> values = generateArr(i);
@@ -91,16 +145,38 @@ int main() {
         duration = duration_cast<milliseconds>(end - start);
         selection << i << ' ' << duration.count() << '\n';
 
+        // INSERTION (BIN)
+        toSort = values;
+        start = high_resolution_clock::now();
+        insertionSortBin(&toSort);
+        end   = high_resolution_clock::now();
+
+        duration = duration_cast<milliseconds>(end - start);
+        bin << i << ' ' << duration.count() << '\n';
+
+        // INSERTION (DEL)
+        toSort = values;
+        start = high_resolution_clock::now();
+        insertionSortDel(&toSort);
+        end   = high_resolution_clock::now();
+
+        duration = duration_cast<milliseconds>(end - start);
+        del << i << ' ' << duration.count() << '\n';
+
         // WRITING DATA
         insertion.flush();
         bubble.flush();
         selection.flush();
+        bin.flush();
+        del.flush();
     }
 
 
     insertion.close();
     bubble.close();
     selection.close();
+    bin.close();
+    del.close();
 
     return 0;
 }

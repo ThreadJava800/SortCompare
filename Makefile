@@ -12,9 +12,9 @@ CFLAGS  = -D _DEBUG -ggdb3 -std=c++17 -O0 -Wall -Wextra -Weffc++ -Waggressive-lo
 # -fsanitize=address,alignment,bool,bounds,enum,float-cast-overflow,float-divide-by-zero,integer-divide-by-zero,leak,nonnull-attribute,null,object-size,return,returns-nonnull-attribute,shift,signed-integer-overflow,undefined,unreachable,vla-bound,vptr
 
 
-SOURCES=quadratics.cpp
+SOURCES=mergeSort.cpp
 
-EXECUTABLE=quadr
+EXECUTABLE=merge
  
 all: compile
 
