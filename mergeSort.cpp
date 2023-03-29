@@ -147,7 +147,7 @@ int main() {
 
     srand((unsigned) time(NULL));
 
-    for (int i = 1; i <= 100; i++) {
+    for (int i = 1; i <= 30; i++) {
         int* values  = generateIntArr(i);
         int* valCopy = (int*) calloc(i, sizeof(int));
         int* buffer = (int*) calloc(i, sizeof(int));
@@ -160,7 +160,7 @@ int main() {
         auto end   = high_resolution_clock::now();
 
         auto duration = duration_cast<nanoseconds>(end - start);
-        sortMerge << i << ' ' << duration.count() / 100 << '\n';
+        sortMerge << i << ' ' << duration.count() / 1000 << '\n';
 
         start = high_resolution_clock::now();
         for (int m = 0; m < 1000; m++) {
@@ -170,7 +170,7 @@ int main() {
         end   = high_resolution_clock::now();
 
         duration = duration_cast<nanoseconds>(end - start);
-        ins << i << ' ' << duration.count() / 100 << '\n';
+        ins << i << ' ' << duration.count() / 1000 << '\n';
 
         start = high_resolution_clock::now();
         for (int m = 0; m < 1000; m++) {
@@ -180,7 +180,7 @@ int main() {
         end   = high_resolution_clock::now();
 
         duration = duration_cast<nanoseconds>(end - start);
-        bin << i << ' ' << duration.count() / 100 << '\n';
+        bin << i << ' ' << duration.count() / 1000 << '\n';
 
         valCopy      = (int*) memcpy(valCopy, values, i * sizeof(int));
         start = high_resolution_clock::now();
@@ -191,7 +191,7 @@ int main() {
         end   = high_resolution_clock::now();
 
         duration = duration_cast<nanoseconds>(end - start);
-        del << i << ' ' << duration.count() / 100 << '\n';
+        del << i << ' ' << duration.count() / 1000 << '\n';
 
 
         sortMerge.flush();
