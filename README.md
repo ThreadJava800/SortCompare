@@ -11,11 +11,17 @@
 
 Here are some charts:
 
-![alt text](https://github.com/ThreadJava800/SortCompare/blob/main/fastSort.png)
+> Insertion (2) = insertion sort with binary search and [optimisation without swappings](https://github.com/ThreadJava800/SortCompare/blob/main/quadratics.cpp#L15).
 
-![alt text](https://github.com/ThreadJava800/SortCompare/blob/main/qsortCmp.png)
+![Fast sortings](https://github.com/ThreadJava800/SortCompare/blob/main/fastSorts.png)
 
-![alt text](https://github.com/ThreadJava800/SortCompare/blob/main/quadrSort.png)
+![Quick sortings](https://github.com/ThreadJava800/SortCompare/blob/main/qsortCmp.png)
+
+![Quadratic sorts](https://github.com/ThreadJava800/SortCompare/blob/main/quadrSort.png)
+
+![Merge vs insertion](https://github.com/ThreadJava800/SortCompare/blob/main/insMerge.png)
+
+So, as we can see insertion (2) works faster with arrays (<= 20 elems) than merge. 
 
 On the graph below you can see comparison of all sortings (quadratic sorts has amount of elements in range [1000, 10^5] and other sortings have [10000, 10^7] elements). It shows us how quadratic sortings unefficient.
 
